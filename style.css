@@ -1,0 +1,173 @@
+:root {
+  --page-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: var(--soft-blue);
+  background: var(--page-bg);
+  font-family: "Outfit", sans-serif;
+}
+
+
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: min(100%, 350px);
+  padding: 24px;
+  border-radius: 15px;
+  background: var(--card-bg);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.28);
+}
+
+.card__images {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.card__images-product {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.card__images-layer {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  background: hsla(178, 100%, 50%, 0.5);
+  transition: opacity 0.25s ease;
+}
+
+.card__images:hover .card__images-layer,
+.card__images:focus-within .card__images-layer {
+  opacity: 1;
+}
+
+.card__images-layer img {
+  width: 48px;
+  height: 48px;
+}
+
+.card__title {
+  display: inline-block;
+  margin-top: 22px;
+  color: var(--white);
+  font-size: 22px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.card__title:hover,
+.card__creator a:hover {
+  color: var(--cyan);
+}
+
+.card__description {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.45;
+}
+
+.card__time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.card__time-left,
+.card__time-right {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 16px;
+}
+
+.card__time-left {
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+.card__time-left img {
+  width: 11px;
+}
+
+.card__time-right img {
+  width: 17px;
+}
+
+.card__creator {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 16px;
+  font-size: 16px;
+}
+
+.card__creator > img {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card__creator a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.attribution {
+  margin-top: 18px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--cyan);
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 16px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .card__description {
+    font-size: 16px;
+  }
+}
