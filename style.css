@@ -40,7 +40,7 @@ body {
   cursor: pointer;
 }
 
-.card__images-product {
+.card__images > img {
   display: block;
   width: 100%;
   aspect-ratio: 1;
@@ -69,18 +69,21 @@ body {
 
 .card__title {
   margin-top: 22px;
+}
+
+.card__title h1 {
   color: var(--white);
   font-size: 22px;
   font-weight: 600;
   transition: color 0.2s ease;
 }
 
-.card__title:hover,
+.card__title h1:hover,
 .card__creator a:hover {
   color: var(--cyan);
 }
 
-.card__description {
+#info {
   margin-top: 15px;
   font-size: 18px;
   font-weight: 300;
@@ -158,7 +161,7 @@ footer a {
     padding: 22px;
   }
 
-  .card__description {
+  #info {
     font-size: 16px;
   }
 }
